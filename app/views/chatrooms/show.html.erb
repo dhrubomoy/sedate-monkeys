@@ -1,0 +1,26 @@
+<br>
+<div data-behavior='messages' data-chatroom-id='<%= @chatroom.id %>'>
+	<% @messages.each do |message| %>
+		<%= render message %>
+	<% end %>
+</div>
+
+<br>
+<div>
+	<%= form_for [@chatroom, Message.new], remote: :true do |f| %>
+	  <%= f.text_area :body, rows: 4, class: "form-control", id: "message-submit-btn"%>
+	  <br>
+	  <%= f.button class: "btn btn-md btn-info", style: "float: right;"  do %>
+		  <i class="fa fa-paper-plane-o fa-2x" aria-hidden="true"></i>
+		<% end %>
+	<% end %>
+</div>
+
+<br><br><br><br>
+<div class="card" id="room">
+  <!-- <div class="panel-body"> -->
+  <div class="card-header">
+  	<strong>Room Name: </strong><%= @chatroom.name %> 	
+  </div>
+</div>
+

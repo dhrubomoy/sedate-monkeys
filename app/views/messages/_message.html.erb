@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-header">
+    <h3><%= message.user.username %></h3> wrote on <i><%= Time.now.strftime('%c') %></i>
+  </div>
+  <div class="card-block">
+    <%= markdown(message.body) %>
+  </div>
+</div>
+<br><br>
